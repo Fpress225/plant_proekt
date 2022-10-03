@@ -14,7 +14,7 @@ plant *parse_plant(char *str) {
     pl->id = strtol(c, NULL, 10);
     if(errno != 0) {
         return NULL;
-        
+        free(str_copy);
     }
     pl->name = strtok(NULL, CSV_SEPARATOR);
     pl->sort = strtok(NULL, CSV_SEPARATOR);
