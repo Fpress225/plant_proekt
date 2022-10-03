@@ -8,14 +8,11 @@ void flush_input(void) {
 }
 
 void add_plant_in_scv(char *name, char *sort) {
-    char *c;
+    char *c = malloc(300 * sizeof(char));
     int line_length;
-    plant *ptr;
-    FILE *f;
+    plant *ptr = malloc(sizeof(plant));
+    FILE *f = fopen("plants.scv", "a+");
     ssize_t read;
-    c = malloc(300 * sizeof(char));
-    f = fopen("plants.scv", "a+");
-    ptr = malloc(sizeof(plant));
     ptr->id = 1;
     while((read = getline(&c, &line_length, f)) != -1)
         ptr->id++;
