@@ -4,10 +4,9 @@
 #include "flush_input.h"
 
 plant *get_plant(unsigned long id, char *name, char *sort) {
-    plant *ptr;
+    plant *ptr = malloc(sizeof(plant));
     FILE *f;
     f = fopen("plants.scv", "a");
-    ptr = malloc(sizeof(plant));
     ptr->id = id;
     ptr->name = name;
     ptr->sort = sort;

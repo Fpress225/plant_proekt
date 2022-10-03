@@ -8,17 +8,19 @@
 
 plant *parse_plant(char *str) {
     plant *pl = malloc(sizeof(plant));
-    char *sep = CSV_SEPARATOR;
+    char *str_copy = strdup(str);
     char *c;
-    c = strtok(str, sep);
+    c = strtok(str_copy, CSV_SEPARATOR);
     errno = 0;
     pl->id = strtol(c, NULL, 10);
     if(errno != 0) {
         return NULL;
+        
     }
-    pl->name = strtok(NULL, sep);
-    pl->sort = strtok(NULL, sep);
+    pl->name = strtok(NULL, CSV_SEPARATOR);
+    pl->sort = strtok(NULL, CSV_SEPARATOR);
     printf("%d\n%s\n%s\n", pl->id, pl->name, pl->sort);
+    free(str_copy);
     return pl;
 }
 
