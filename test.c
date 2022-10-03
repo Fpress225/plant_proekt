@@ -1,5 +1,3 @@
-#define CSV_SEPARATOR "^"
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -18,7 +16,6 @@ plant *parse_plant(char *str) {
     }
     pl->name = strtok(NULL, CSV_SEPARATOR);
     pl->sort = strtok(NULL, CSV_SEPARATOR);
-    printf("%d\n%s\n%s\n", pl->id, pl->name, pl->sort);
     free(str_copy);
     return pl;
 }

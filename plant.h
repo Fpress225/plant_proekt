@@ -1,4 +1,6 @@
 #include <stdio.h>
+#define CSV_SEPARATOR "^"
+
 
 typedef struct Plant {
     unsigned long id;
