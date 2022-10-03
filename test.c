@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "plant.h"
-#include <errno>
+#include <errno.h>
 
 plant *parse_plant(char *str) {
     plant *pl;
