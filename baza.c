@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Plant.h"
+#include "plant.h"
 
 void flush_input(void) {
     char c;
