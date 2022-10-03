@@ -3,13 +3,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "Plant.h"
+#include "plant.h"
 
-plant *parse_plant(char *string) {
+plant *parse_plant(char *str) {
     plant *pl;
     pl = malloc(sizeof(plant));
-    char *sep = "^";
-    pl->id = strtok(string, sep);
+    char *sep = CSV_SEPARATOR;
+    char *c;
+    c = strtok(str, sep);
+    pl->id = strtol(c, NULL, 10);
     pl->name = strtok(NULL, sep);
     pl->sort = strtok(NULL, sep);
     printf("%d\n%s\n%s\n", pl->id, pl->name, pl->sort);

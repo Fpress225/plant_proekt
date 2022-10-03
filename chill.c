@@ -24,7 +24,6 @@ int main() {
     else if (ptr2[0] == 'b' && ptr2[1] == 'l' && ptr2[2] == 'u' && ptr2[3] == 'e')
         ptr2 = (char *) realloc(ptr2, (4, sizeof(char)));
 
-
     if (ptr1 == ptr2) 
         printf("%s\n", ptr1);
     else if ((ptr1 == "red" || ptr1 == "yellow") && (ptr2 == "red" || ptr2 == "yellow")) 
