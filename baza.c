@@ -25,6 +25,7 @@ void add_plant_in_scv(char *name, char *sort) {
     fclose(f);
     free(ptr);
 }
+
 void add_plant() {
     char c[100];
     char *name;
