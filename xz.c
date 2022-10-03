@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 int *array(int array[], int size) {
-    int *ptr;
-    ptr = calloc(size, sizeof(int));
+    int *ptr = calloc(size, sizeof(int));
     for (int n = 0; n < size; n++) {
         ptr[n] = array[n];
     } 
