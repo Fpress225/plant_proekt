@@ -9,8 +9,7 @@
 plant *parse_plant(char *str) {
     plant *pl = malloc(sizeof(plant));
     char *str_copy = strdup(str);
-    char *c;
-    c = strtok(str_copy, CSV_SEPARATOR);
+    char *c = strtok(str_copy, CSV_SEPARATOR);
     errno = 0;
     pl->id = strtol(c, NULL, 10);
     if(errno != 0) {
