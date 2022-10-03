@@ -9,12 +9,12 @@
 plant *parse_plant(char *str) {
     plant *pl = malloc(sizeof(plant));
     char *str_copy = strdup(str);
-    char *c = strtok(str_copy, CSV_SEPARATOR);
+    char *id_str = strtok(str_copy, CSV_SEPARATOR);
     errno = 0;
-    pl->id = strtol(c, NULL, 10);
-    if(errno != 0) {
-        return NULL;
+    pl->id = strtol(id_str, NULL, 10);
+    if (errno != 0) {
         free(str_copy);
+        return NULL;
     }
     pl->name = strtok(NULL, CSV_SEPARATOR);
     pl->sort = strtok(NULL, CSV_SEPARATOR);
