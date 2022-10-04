@@ -2,18 +2,29 @@
 #include <stdlib.h>
 #include "plant.h" 
 
-unsigned long number_of_lines (char *file_patch) {
-    unsigned long row_count = 0;
+long number_of_lines(char *file_patch) {
+    long row_count = 0;
     FILE *f = fopen(file_patch, "r");
-    unsigned char c;
+    if (f == NULL)
+        return -1;
+    int c;
     while ((c = fgetc(f)) != -1) {
-        if (c ==  '\n')
+        if (c == '\n')
             row_count++;
     }
     fclose(f);
     return row_count;
 }
 
-void main() {
-    number_of_lines("plant.csv");
+int main() {
+    char *file_patch;
+    printf("введи путь к файлу:");
+    scanf("%s", file_patch);
+    long row_count = number_of_lines(file_patch);
+    if (row_count != -1) {
+        printf("Количество строк: %ld\n", row_count);        
+        return 0;
+    }
+    printf("Error %ld", row_count);
+    return 1;
 }

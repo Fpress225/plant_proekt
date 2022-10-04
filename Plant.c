@@ -6,7 +6,7 @@
 plant *get_plant(unsigned long id, char *name, char *sort) {
     plant *ptr = malloc(sizeof(plant));
     FILE *f;
-    f = fopen("plants.scv", "a");
+    f = fopen("plants.csv", "a");
     ptr->id = id;
     ptr->name = name;
     ptr->sort = sort;

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "plant.h"
 
 void flush_input(void) {
@@ -11,7 +12,7 @@ void add_plant_in_scv(char *name, char *sort) {
     char *c = malloc(300 * sizeof(char));
     int line_length;
     plant *ptr = malloc(sizeof(plant));
-    FILE *f = fopen("plants.scv", "a+");
+    FILE *f = fopen("plants.csv", "a+");
     ssize_t read;
     ptr->id = 1;
     while((read = getline(&c, &line_length, f)) != -1)
